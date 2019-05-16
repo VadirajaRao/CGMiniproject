@@ -12,7 +12,6 @@ public : float x, y, z;
     z = z1;
   }
 };
-
 // Vertices to draw a square
 point cube[8] = { point(-200.0, -200.0,200.0),
 		  point(200.0, -200.0, 200.0),
@@ -22,6 +21,15 @@ point cube[8] = { point(-200.0, -200.0,200.0),
 		  point(200.0, 200.0, 200.0),
 		  point(200.0, 200.0, -200.0),
 		  point(-200.0, 200.0, -200.0)};
+
+point door[4] = { point(-50.0, -200.0, 201.0),
+      point(50.0, -200.0, 201.0),
+      point(-50.0, 75.0, 201.0),
+      point(50.0, 75.0, 201.0)};
+
+GLfloat house_color[3][3] = {{1.0, 0.6, 0.2},
+		       {1.0, 0.7, 0.4},
+		       {0.9, 0.61, 0.32}};
 
 // Variables required for menu functioning
 static int menu_id;
@@ -39,9 +47,9 @@ void draw_house(void);
 void draw_building(void);
 
 void draw_triangle(void);
-void draw_text(float, float, string);
 
-void draw_cube(void);
+void draw_cube(GLfloat colors[][3]);
+void draw_door();
 
 /***** MAIN FUNCTION *****/
 
@@ -89,15 +97,9 @@ void display(void) {
 
   switch(value) {
   case 1: draw_house();
-    //glClearColor(1.0, 0.0, 0.0, 1.0);
-    //glColor3f(0.0, 0.0, 0.0);
-    //draw_text(10, 10, "A house comes here");
     break;
 
   case 2: draw_building();
-    //glClearColor(0.0, 1.0, 0.0, 1.0);
-    //glColor3f(1.0, 1.0, 1.0);
-    //draw_text(10, 10, "A building comes here");
     break;
   }
 }
@@ -145,16 +147,21 @@ void draw_triangle(void) {
 // Function to draw house
 void draw_house(void) {
   glPushMatrix();
-  glClearColor(1.0, 1.0, 1.0, 1.0);
+  glClearColor(0.45, 0.90, 0.0, 1.0);
   glRotatef(20.0, 1.0, 0.0, 0.0);
   glRotatef(-20.0, 0.0, 1.0, 0.0);
-  draw_cube();
+  glScalef(1.5, 1.0, 1.3);
+  draw_cube(house_color);
+
+  //glRotatef(20.0, 1.0, 0.0, 0.0);
+  //glRotatef(-20.0, 0.0, 1.0, 0.0);
+  draw_door();
   glPopMatrix();
 }
 
 // Function to draw a cube
-void draw_cube(void) {
-  glColor3f(1.0, 0.0, 0.0);
+void draw_cube(GLfloat colors[][3]) {
+  glColor3fv(colors[0]);
   glBegin(GL_POLYGON);
   glVertex3f(cube[0].x, cube[0].y, cube[0].z);
   glVertex3f(cube[1].x, cube[1].y, cube[1].z);
@@ -169,7 +176,7 @@ void draw_cube(void) {
   glVertex3f(cube[7].x, cube[7].y, cube[7].z);
   glEnd();
 
-  glColor3f(0.0, 1.0, 0.0);
+  glColor3fv(colors[1]);
   glBegin(GL_POLYGON);
   glVertex3f(cube[0].x, cube[0].y, cube[0].z);
   glVertex3f(cube[1].x, cube[1].y, cube[1].z);
@@ -184,7 +191,7 @@ void draw_cube(void) {
   glVertex3f(cube[7].x, cube[7].y, cube[7].z);
   glEnd();
 
-  glColor3f(0.0, 0.0, 1.0);
+  glColor3fv(colors[2]);
   glBegin(GL_POLYGON);
   glVertex3f(cube[0].x, cube[0].y, cube[0].z);
   glVertex3f(cube[3].x, cube[3].y, cube[3].z);
@@ -197,6 +204,20 @@ void draw_cube(void) {
   glVertex3f(cube[2].x, cube[2].y, cube[2].z);
   glVertex3f(cube[6].x, cube[6].y, cube[6].z);
   glVertex3f(cube[5].x, cube[5].y, cube[5].z);
+  glEnd();
+
+  glFlush();
+  glutSwapBuffers();
+}
+
+// Function to draw a door
+void draw_door(void) {
+  glColor3f(0.58, 0.23, 0.06);
+  glBegin(GL_POLYGON);
+  glVertex3f(door[0].x, door[0].y, door[0].z);
+  glVertex3f(door[1].x, door[1].y, door[1].z);
+  glVertex3f(door[3].x, door[3].y, door[3].z);
+  glVertex3f(door[2].x, door[2].y, door[2].z);
   glEnd();
 
   glFlush();

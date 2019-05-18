@@ -1,7 +1,10 @@
 #include <iostream>
 #include <GL/glut.h>
+#include <math.h>
 
 using namespace std;
+
+const float PI = 3.141;
 
 class point {
 public : float x, y, z;
@@ -23,9 +26,14 @@ point cube[8] = { point(-200.0, -200.0,200.0),
 		  point(-200.0, 200.0, -200.0)};
 
 point door[4] = { point(-50.0, -200.0, 201.0),
-      point(50.0, -200.0, 201.0),
-      point(-50.0, 75.0, 201.0),
-      point(50.0, 75.0, 201.0)};
+		  point(50.0, -200.0, 201.0),
+		  point(-50.0, 75.0, 201.0),
+		  point(50.0, 75.0, 201.0)};
+
+point pot[4] = { point(-10.0, 0.0, 0.0),
+		 point(10.0, 0.0, 0.0),
+		 point(20.0, 30.0, 0.0),
+		 point(-20.0, 30.0, 0.0)};
 
 GLfloat house_color[3][3] = {{1.0, 0.6, 0.2},
 		       {1.0, 0.7, 0.4},
@@ -49,7 +57,10 @@ void draw_building(void);
 void draw_triangle(void);
 
 void draw_cube(GLfloat colors[][3]);
-void draw_door();
+void draw_door(void);
+
+void draw_pot(void);
+void draw_circle(float, float, float);
 
 /***** MAIN FUNCTION *****/
 
@@ -147,7 +158,7 @@ void draw_triangle(void) {
 // Function to draw house
 void draw_house(void) {
   glPushMatrix();
-  glClearColor(0.45, 0.90, 0.0, 1.0);
+  glClearColor(115/255.0, 230/255.0, 0.0, 1.0);
   glRotatef(20.0, 1.0, 0.0, 0.0);
   glRotatef(-20.0, 0.0, 1.0, 0.0);
   glScalef(1.5, 1.0, 1.3);
@@ -156,6 +167,18 @@ void draw_house(void) {
   //glRotatef(20.0, 1.0, 0.0, 0.0);
   //glRotatef(-20.0, 0.0, 1.0, 0.0);
   draw_door();
+  glPopMatrix();
+
+  glPushMatrix();
+  glTranslatef(0.0, 215.0, 0.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_pot();
+  glPopMatrix();
+
+  glPushMatrix();
+  glTranslatef(0.0, 200.0, 0.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_circle(0.0, 50.0, 20.0);
   glPopMatrix();
 }
 
@@ -218,6 +241,34 @@ void draw_door(void) {
   glVertex3f(door[1].x, door[1].y, door[1].z);
   glVertex3f(door[3].x, door[3].y, door[3].z);
   glVertex3f(door[2].x, door[2].y, door[2].z);
+  glEnd();
+
+  glFlush();
+  glutSwapBuffers();
+}
+
+// Function to draw pots
+void draw_pot(void) {
+  glColor3f(0.58, 0.23, 0.06);
+  glBegin(GL_POLYGON);
+  glVertex3f(pot[0].x, pot[0].y, pot[0].z);
+  glVertex3f(pot[1].x, pot[1].y, pot[1].z);
+  glVertex3f(pot[2].x, pot[2].y, pot[2].z);
+  glVertex3f(pot[3].x, pot[3].y, pot[3].z);
+  glEnd();
+
+  glFlush();
+  glutSwapBuffers();
+}
+
+// Function to draw circle
+void draw_circle(float x, float y, float r) {
+  glColor3f(51/255.0, 102/255.0, 0.0);
+  glBegin(GL_TRIANGLE_FAN);
+  glVertex2f(x, y);
+  
+  for(float i = 0; i <= 2 * PI + 0.1; i += 0.1)
+    glVertex2f(x+sin(i)*r, y+cos(i)*r);
   glEnd();
 
   glFlush();

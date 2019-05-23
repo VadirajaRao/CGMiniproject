@@ -41,104 +41,104 @@ point pot[4] = { point(-10.0, 0.0, 0.0),
 // Vertices for the ramps
 point face1_ramp1[] = { 
   // Front
-  point(-200.0, -100.0, 220.0),
-  point(150.0, -100.0, 220.0),
-  point(150.0, -90.0, 220.0),
-  point(-200.0, -90.0, 220.0),
+  point(-200.0, -100.0, 240.0),
+  point(150.0, -100.0, 240.0),
+  point(150.0, -90.0, 240.0),
+  point(-200.0, -90.0, 240.0),
   // Side 1
   point(-200.0, -100.0, 200.0),
-  point(-200.0, -100.0, 220.0),
-  point(-200.0, -90.0, 220.0),
+  point(-200.0, -100.0, 240.0),
+  point(-200.0, -90.0, 240.0),
   point(-200.0, -90.0, 200.0),
   // Side 2
   point(150.0, -100.0, 200.0),
   point(150.0, -90.0, 200.0),
-  point(150.0, -90.0, 220.0),
-  point(150.0, -100.0, 220.0)};
+  point(150.0, -90.0, 240.0),
+  point(150.0, -100.0, 240.0)};
 
 point face1_ramp2[] = {
   // Front
-  point(-150.0, 0.0, 220.0),
-  point(200.0, 0.0, 220.0),
-  point(200.0, 10.0, 220.0),
-  point(-150.0, 10.0, 220.0),
+  point(-150.0, 0.0, 240.0),
+  point(200.0, 0.0, 240.0),
+  point(200.0, 10.0, 240.0),
+  point(-150.0, 10.0, 240.0),
   // Side 
   point(-150.0, 0.0, 200.0),
-  point(-150.0, 0.0, 220.0),
-  point(-150.0, 10.0, 220.0),
+  point(-150.0, 0.0, 240.0),
+  point(-150.0, 10.0, 240.0),
   point(-150.0, 10.0, 200.0),
   // Side 2
   point(200.0, 0.0, 200.0),
   point(200.0, 10.0, 200.0),
-  point(200.0, 10.0, 220.0),
-  point(200.0, 0.0, 220.0)};
+  point(200.0, 10.0, 240.0),
+  point(200.0, 0.0, 240.0)};
 
 point face1_ramp3[] = {
   // Front
-  point(-200.0, 100.0, 220.0),
-  point(150.0, 100.0, 220.0),
-  point(150.0, 110.0, 220.0),
-  point(-200.0, 110.0, 220.0),
+  point(-200.0, 100.0, 240.0),
+  point(150.0, 100.0, 240.0),
+  point(150.0, 110.0, 240.0),
+  point(-200.0, 110.0, 240.0),
   // Side 1
   point(-200.0, 100.0, 200.0),
-  point(-200.0, 100.0, 220.0),
-  point(-200.0, 110.0, 220.0),
+  point(-200.0, 100.0, 240.0),
+  point(-200.0, 110.0, 240.0),
   point(-200.0, 110.0, 200.0),
   // Side 2
   point(150.0, 100.0, 200.0),
   point(150.0, 110.0, 200.0),
-  point(150.0, 110.0, 220.0),
-  point(150.0, 100.0, 220.0)};
+  point(150.0, 110.0, 240.0),
+  point(150.0, 100.0, 240.0)};
 
 point face2_ramp1[] = {
   // Front
-  point(220.0, -100.0, 200.0),
-  point(220.0, -100.0, -150.0),
-  point(220.0, -90.0, -150.0),
-  point(220.0, -90.0, 200.0),
+  point(240.0, -100.0, 200.0),
+  point(240.0, -100.0, -150.0),
+  point(240.0, -90.0, -150.0),
+  point(240.0, -90.0, 200.0),
   // Side 1
   point(200.0, -100.0, 200.0),
-  point(220.0, -100.0, 200.0),
-  point(220.0, -90.0, 200.0),
+  point(240.0, -100.0, 200.0),
+  point(240.0, -90.0, 200.0),
   point(200.0, -90.0, 200.0),
   // Side 2
   point(200.0, -100.0, -150.0),
-  point(220.0, -100.0, -150.0),
-  point(220.0, -90.0, -150.0),
+  point(240.0, -100.0, -150.0),
+  point(240.0, -90.0, -150.0),
   point(200.0, -90.0, -150.0)};
 
 point face2_ramp2[] = {
   // Front
-  point(220.0, 0.0, 150.0),
-  point(220.0, 0.0, -200.0),
-  point(220.0, 10.0, -200.0),
-  point(220.0, 10.0, 150.0),
+  point(240.0, 0.0, 150.0),
+  point(240.0, 0.0, -200.0),
+  point(240.0, 10.0, -200.0),
+  point(240.0, 10.0, 150.0),
   // Side 1
   point(200.0, 0.0, 150.0),
-  point(220.0, 0.0, 150.0),
-  point(220.0, 10.0, 150.0),
+  point(240.0, 0.0, 150.0),
+  point(240.0, 10.0, 150.0),
   point(200.0, 10.0, 150.0),
   // Side 2
   point(200.0, 0.0, -200.0),
-  point(220.0, 0.0, -200.0),
-  point(220.0, 10.0, -200.0),
+  point(240.0, 0.0, -200.0),
+  point(240.0, 10.0, -200.0),
   point(200.0, 10.0, -200.0)};
 
 point face2_ramp3[] = {
   // Front
-  point(220.0, 100.0, 200.0),
-  point(220.0, 100.0, -150.0),
-  point(220.0, 110.0, -150.0),
-  point(220.0, 110.0, 200.0),
+  point(240.0, 100.0, 200.0),
+  point(240.0, 100.0, -150.0),
+  point(240.0, 110.0, -150.0),
+  point(240.0, 110.0, 200.0),
   // Side 1
   point(200.0, 100.0, 200.0),
-  point(220.0, 100.0, 200.0),
-  point(220.0, 110.0, 200.0),
+  point(240.0, 100.0, 200.0),
+  point(240.0, 110.0, 200.0),
   point(200.0, 110.0, 200.0),
   // Side 2
   point(200.0, 100.0, -150.0),
-  point(220.0, 100.0, -150.0),
-  point(220.0, 110.0, -150.0),
+  point(240.0, 100.0, -150.0),
+  point(240.0, 110.0, -150.0),
   point(200.0, 110.0, -150.0)};
 
 // Color of the house in RGB format
@@ -178,6 +178,8 @@ void draw_pot(void);
 void draw_circle(float, float, float);
 
 void draw_ramps(void);
+void make_ramp(point[], int);
+void draw_grass(void);
 
 /***** MAIN FUNCTION *****/
 
@@ -238,34 +240,6 @@ void display(void) {
   case 3: draw_triangle();
     break;
   }
-}
-
-// Function to draw text in the window.
-// NOTE : This function is used only for debugging purposes during the development.
-void draw_text(float x, float y, string s) {
-  int i;
-  glRasterPos2f(x, y);
-  for(i=0; s[i] != '\0'; i++)
-    glutBitmapCharacter(GLUT_BITMAP_HELVETICA_18, s[i]);
-
-  glFlush();
-  glutSwapBuffers();
-}
-
-// Function to draw triangle.
-// NOTE : This function is used only for debugging purposes during the development.
-void draw_triangle(void) {
-  cout << "Triangle start" << endl;
-  glBegin(GL_POLYGON);
-  glVertex3f(-100.0, 0.0, 0.0);
-  glVertex3f(100.0, 0.0, 0.0);
-  glVertex3f(0.0, 100.0, 0.0);
-  glEnd();
-
-  glFlush();
-  glutSwapBuffers();
-
-  cout << "Triangle end" << endl;
 }
 
 // Function for reshape callback.
@@ -456,274 +430,59 @@ void draw_building(void) {
   glScalef(1.0, 2.0, 1.0);
   draw_cube(building_color);
   draw_ramps();
+
+  /*
+  glRotatef(theta, 0.0, 1.0, 0.0);
+  glTranslatef(0.0, 10.0, 0.0);
+  glScalef(1.0, 2.0, 1.0);
+  draw_grass();
+  */
   glPopMatrix();
 }
 
-void draw_ramps(void) {
+
+void make_ramp(point ramp[], int a, int b, int c) {
   glColor3f(0.0, 0.0, 0.0);
+
   glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp1[0].x, face1_ramp1[0].y, face1_ramp1[0].z);
-  glVertex3f(face1_ramp1[1].x, face1_ramp1[1].y, face1_ramp1[1].z);
-  glVertex3f(face1_ramp1[2].x, face1_ramp1[2].y, face1_ramp1[2].z);
-  glVertex3f(face1_ramp1[3].x, face1_ramp1[3].y, face1_ramp1[3].z);
+  glVertex3f(a*ramp[0].x, b*ramp[0].y, c*ramp[0].z);
+  glVertex3f(a*ramp[1].x, b*ramp[1].y, c*ramp[1].z);
+  glVertex3f(a*ramp[2].x, b*ramp[2].y, c*ramp[2].z);
+  glVertex3f(a*ramp[3].x, b*ramp[3].y, c*ramp[3].z);
   glEnd();
 
   glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp1[4].x, face1_ramp1[4].y, face1_ramp1[4].z);
-  glVertex3f(face1_ramp1[5].x, face1_ramp1[5].y, face1_ramp1[5].z);
-  glVertex3f(face1_ramp1[6].x, face1_ramp1[6].y, face1_ramp1[6].z);
-  glVertex3f(face1_ramp1[7].x, face1_ramp1[7].y, face1_ramp1[7].z);
+  glVertex3f(a*ramp[4].x, b*ramp[4].y, c*ramp[4].z);
+  glVertex3f(a*ramp[5].x, b*ramp[5].y, c*ramp[5].z);
+  glVertex3f(a*ramp[6].x, b*ramp[6].y, c*ramp[6].z);
+  glVertex3f(a*ramp[7].x, b*ramp[7].y, c*ramp[7].z);
   glEnd();
 
   glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp1[8].x, face1_ramp1[8].y, face1_ramp1[8].z);
-  glVertex3f(face1_ramp1[9].x, face1_ramp1[9].y, face1_ramp1[9].z);
-  glVertex3f(face1_ramp1[10].x, face1_ramp1[10].y, face1_ramp1[10].z);
-  glVertex3f(face1_ramp1[11].x, face1_ramp1[11].y, face1_ramp1[11].z);
-  glEnd();
-
-  // Face 1 Ramp 2
-  glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp2[0].x, face1_ramp2[0].y, face1_ramp2[0].z);
-  glVertex3f(face1_ramp2[1].x, face1_ramp2[1].y, face1_ramp2[1].z);
-  glVertex3f(face1_ramp2[2].x, face1_ramp2[2].y, face1_ramp2[2].z);
-  glVertex3f(face1_ramp2[3].x, face1_ramp2[3].y, face1_ramp2[3].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp2[4].x, face1_ramp2[4].y, face1_ramp2[4].z);
-  glVertex3f(face1_ramp2[5].x, face1_ramp2[5].y, face1_ramp2[5].z);
-  glVertex3f(face1_ramp2[6].x, face1_ramp2[6].y, face1_ramp2[6].z);
-  glVertex3f(face1_ramp2[7].x, face1_ramp2[7].y, face1_ramp2[7].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp2[8].x, face1_ramp2[8].y, face1_ramp2[8].z);
-  glVertex3f(face1_ramp2[9].x, face1_ramp2[9].y, face1_ramp2[9].z);
-  glVertex3f(face1_ramp2[10].x, face1_ramp2[10].y, face1_ramp2[10].z);
-  glVertex3f(face1_ramp2[11].x, face1_ramp2[11].y, face1_ramp2[11].z);
-  glEnd();
-
-  // Face 1 Ramp 3
-  glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp3[0].x, face1_ramp3[0].y, face1_ramp3[0].z);
-  glVertex3f(face1_ramp3[1].x, face1_ramp3[1].y, face1_ramp3[1].z);
-  glVertex3f(face1_ramp3[2].x, face1_ramp3[2].y, face1_ramp3[2].z);
-  glVertex3f(face1_ramp3[3].x, face1_ramp3[3].y, face1_ramp3[3].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp3[4].x, face1_ramp3[4].y, face1_ramp3[4].z);
-  glVertex3f(face1_ramp3[5].x, face1_ramp3[5].y, face1_ramp3[5].z);
-  glVertex3f(face1_ramp3[6].x, face1_ramp3[6].y, face1_ramp3[6].z);
-  glVertex3f(face1_ramp3[7].x, face1_ramp3[7].y, face1_ramp3[7].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp3[8].x, face1_ramp3[8].y, face1_ramp3[8].z);
-  glVertex3f(face1_ramp3[9].x, face1_ramp3[9].y, face1_ramp3[9].z);
-  glVertex3f(face1_ramp3[10].x, face1_ramp3[10].y, face1_ramp3[10].z);
-  glVertex3f(face1_ramp3[11].x, face1_ramp3[11].y, face1_ramp3[11].z);
-  glEnd();
-
-  // Face 2 Ramp 1
-  glBegin(GL_POLYGON);
-  glVertex3f(face2_ramp1[0].x, face2_ramp1[0].y, face2_ramp1[0].z);
-  glVertex3f(face2_ramp1[1].x, face2_ramp1[1].y, face2_ramp1[1].z);
-  glVertex3f(face2_ramp1[2].x, face2_ramp1[2].y, face2_ramp1[2].z);
-  glVertex3f(face2_ramp1[3].x, face2_ramp1[3].y, face2_ramp1[3].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face2_ramp1[4].x, face2_ramp1[4].y, face2_ramp1[4].z);
-  glVertex3f(face2_ramp1[5].x, face2_ramp1[5].y, face2_ramp1[5].z);
-  glVertex3f(face2_ramp1[6].x, face2_ramp1[6].y, face2_ramp1[6].z);
-  glVertex3f(face2_ramp1[7].x, face2_ramp1[7].y, face2_ramp1[7].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face2_ramp1[8].x, face2_ramp1[8].y, face2_ramp1[8].z);
-  glVertex3f(face2_ramp1[9].x, face2_ramp1[9].y, face2_ramp1[9].z);
-  glVertex3f(face2_ramp1[10].x, face2_ramp1[10].y, face2_ramp1[10].z);
-  glVertex3f(face2_ramp1[11].x, face2_ramp1[11].y, face2_ramp1[11].z);
-  glEnd();
-
-  // Face 2 Ramp 2
-  glBegin(GL_POLYGON);
-  glVertex3f(face2_ramp2[0].x, face2_ramp2[0].y, face2_ramp2[0].z);
-  glVertex3f(face2_ramp2[1].x, face2_ramp2[1].y, face2_ramp2[1].z);
-  glVertex3f(face2_ramp2[2].x, face2_ramp2[2].y, face2_ramp2[2].z);
-  glVertex3f(face2_ramp2[3].x, face2_ramp2[3].y, face2_ramp2[3].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face2_ramp2[4].x, face2_ramp2[4].y, face2_ramp2[4].z);
-  glVertex3f(face2_ramp2[5].x, face2_ramp2[5].y, face2_ramp2[5].z);
-  glVertex3f(face2_ramp2[6].x, face2_ramp2[6].y, face2_ramp2[6].z);
-  glVertex3f(face2_ramp2[7].x, face2_ramp2[7].y, face2_ramp2[7].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face2_ramp2[8].x, face2_ramp2[8].y, face2_ramp2[8].z);
-  glVertex3f(face2_ramp2[9].x, face2_ramp2[9].y, face2_ramp2[9].z);
-  glVertex3f(face2_ramp2[10].x, face2_ramp2[10].y, face2_ramp2[10].z);
-  glVertex3f(face2_ramp2[11].x, face2_ramp2[11].y, face2_ramp2[11].z);
-  glEnd();
-
-  // Face 2 Ramp 3
-  glBegin(GL_POLYGON);
-  glVertex3f(face2_ramp3[0].x, face2_ramp3[0].y, face2_ramp3[0].z);
-  glVertex3f(face2_ramp3[1].x, face2_ramp3[1].y, face2_ramp3[1].z);
-  glVertex3f(face2_ramp3[2].x, face2_ramp3[2].y, face2_ramp3[2].z);
-  glVertex3f(face2_ramp3[3].x, face2_ramp3[3].y, face2_ramp3[3].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face2_ramp3[4].x, face2_ramp3[4].y, face2_ramp3[4].z);
-  glVertex3f(face2_ramp3[5].x, face2_ramp3[5].y, face2_ramp3[5].z);
-  glVertex3f(face2_ramp3[6].x, face2_ramp3[6].y, face2_ramp3[6].z);
-  glVertex3f(face2_ramp3[7].x, face2_ramp3[7].y, face2_ramp3[7].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face2_ramp3[8].x, face2_ramp3[8].y, face2_ramp3[8].z);
-  glVertex3f(face2_ramp3[9].x, face2_ramp3[9].y, face2_ramp3[9].z);
-  glVertex3f(face2_ramp3[10].x, face2_ramp3[10].y, face2_ramp3[10].z);
-  glVertex3f(face2_ramp3[11].x, face2_ramp3[11].y, face2_ramp3[11].z);
-  glEnd();
-
-  // Face 3 Ramp 1
-  glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp1[0].x, face1_ramp1[0].y, -1*face1_ramp1[0].z);
-  glVertex3f(face1_ramp1[1].x, face1_ramp1[1].y, -1*face1_ramp1[1].z);
-  glVertex3f(face1_ramp1[2].x, face1_ramp1[2].y, -1*face1_ramp1[2].z);
-  glVertex3f(face1_ramp1[3].x, face1_ramp1[3].y, -1*face1_ramp1[3].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp1[4].x, face1_ramp1[4].y, -1*face1_ramp1[4].z);
-  glVertex3f(face1_ramp1[5].x, face1_ramp1[5].y, -1*face1_ramp1[5].z);
-  glVertex3f(face1_ramp1[6].x, face1_ramp1[6].y, -1*face1_ramp1[6].z);
-  glVertex3f(face1_ramp1[7].x, face1_ramp1[7].y, -1*face1_ramp1[7].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp1[8].x, face1_ramp1[8].y, -1*face1_ramp1[8].z);
-  glVertex3f(face1_ramp1[9].x, face1_ramp1[9].y, -1*face1_ramp1[9].z);
-  glVertex3f(face1_ramp1[10].x, face1_ramp1[10].y, -1*face1_ramp1[10].z);
-  glVertex3f(face1_ramp1[11].x, face1_ramp1[11].y, -1*face1_ramp1[11].z);
-  glEnd();
-
-  // Face 3 Ramp 2
-  glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp2[0].x, face1_ramp2[0].y, -1*face1_ramp2[0].z);
-  glVertex3f(face1_ramp2[1].x, face1_ramp2[1].y, -1*face1_ramp2[1].z);
-  glVertex3f(face1_ramp2[2].x, face1_ramp2[2].y, -1*face1_ramp2[2].z);
-  glVertex3f(face1_ramp2[3].x, face1_ramp2[3].y, -1*face1_ramp2[3].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp2[4].x, face1_ramp2[4].y, -1*face1_ramp2[4].z);
-  glVertex3f(face1_ramp2[5].x, face1_ramp2[5].y, -1*face1_ramp2[5].z);
-  glVertex3f(face1_ramp2[6].x, face1_ramp2[6].y, -1*face1_ramp2[6].z);
-  glVertex3f(face1_ramp2[7].x, face1_ramp2[7].y, -1*face1_ramp2[7].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp2[8].x, face1_ramp2[8].y, -1*face1_ramp2[8].z);
-  glVertex3f(face1_ramp2[9].x, face1_ramp2[9].y, -1*face1_ramp2[9].z);
-  glVertex3f(face1_ramp2[10].x, face1_ramp2[10].y, -1*face1_ramp2[10].z);
-  glVertex3f(face1_ramp2[11].x, face1_ramp2[11].y, -1*face1_ramp2[11].z);
-  glEnd();
-
-  // Face 3 Ramp 3
-  glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp3[0].x, face1_ramp3[0].y, -1*face1_ramp3[0].z);
-  glVertex3f(face1_ramp3[1].x, face1_ramp3[1].y, -1*face1_ramp3[1].z);
-  glVertex3f(face1_ramp3[2].x, face1_ramp3[2].y, -1*face1_ramp3[2].z);
-  glVertex3f(face1_ramp3[3].x, face1_ramp3[3].y, -1*face1_ramp3[3].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp3[4].x, face1_ramp3[4].y, -1*face1_ramp3[4].z);
-  glVertex3f(face1_ramp3[5].x, face1_ramp3[5].y, -1*face1_ramp3[5].z);
-  glVertex3f(face1_ramp3[6].x, face1_ramp3[6].y, -1*face1_ramp3[6].z);
-  glVertex3f(face1_ramp3[7].x, face1_ramp3[7].y, -1*face1_ramp3[7].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(face1_ramp3[8].x, face1_ramp3[8].y, -1*face1_ramp3[8].z);
-  glVertex3f(face1_ramp3[9].x, face1_ramp3[9].y, -1*face1_ramp3[9].z);
-  glVertex3f(face1_ramp3[10].x, face1_ramp3[10].y, -1*face1_ramp3[10].z);
-  glVertex3f(face1_ramp3[11].x, face1_ramp3[11].y, -1*face1_ramp3[11].z);
-  glEnd();
-
-  // Face 4 Ramp 1
-  glBegin(GL_POLYGON);
-  glVertex3f(-1*face2_ramp1[0].x, face2_ramp1[0].y, face2_ramp1[0].z);
-  glVertex3f(-1*face2_ramp1[1].x, face2_ramp1[1].y, face2_ramp1[1].z);
-  glVertex3f(-1*face2_ramp1[2].x, face2_ramp1[2].y, face2_ramp1[2].z);
-  glVertex3f(-1*face2_ramp1[3].x, face2_ramp1[3].y, face2_ramp1[3].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(-1*face2_ramp1[4].x, face2_ramp1[4].y, face2_ramp1[4].z);
-  glVertex3f(-1*face2_ramp1[5].x, face2_ramp1[5].y, face2_ramp1[5].z);
-  glVertex3f(-1*face2_ramp1[6].x, face2_ramp1[6].y, face2_ramp1[6].z);
-  glVertex3f(-1*face2_ramp1[7].x, face2_ramp1[7].y, face2_ramp1[7].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(-1*face2_ramp1[8].x, face2_ramp1[8].y, face2_ramp1[8].z);
-  glVertex3f(-1*face2_ramp1[9].x, face2_ramp1[9].y, face2_ramp1[9].z);
-  glVertex3f(-1*face2_ramp1[10].x, face2_ramp1[10].y, face2_ramp1[10].z);
-  glVertex3f(-1*face2_ramp1[11].x, face2_ramp1[11].y, face2_ramp1[11].z);
-  glEnd();
-
-  // Face 4 Ramp 2
-  glBegin(GL_POLYGON);
-  glVertex3f(-1*face2_ramp2[0].x, face2_ramp2[0].y, face2_ramp2[0].z);
-  glVertex3f(-1*face2_ramp2[1].x, face2_ramp2[1].y, face2_ramp2[1].z);
-  glVertex3f(-1*face2_ramp2[2].x, face2_ramp2[2].y, face2_ramp2[2].z);
-  glVertex3f(-1*face2_ramp2[3].x, face2_ramp2[3].y, face2_ramp2[3].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(-1*face2_ramp2[4].x, face2_ramp2[4].y, face2_ramp2[4].z);
-  glVertex3f(-1*face2_ramp2[5].x, face2_ramp2[5].y, face2_ramp2[5].z);
-  glVertex3f(-1*face2_ramp2[6].x, face2_ramp2[6].y, face2_ramp2[6].z);
-  glVertex3f(-1*face2_ramp2[7].x, face2_ramp2[7].y, face2_ramp2[7].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(-1*face2_ramp2[8].x, face2_ramp2[8].y, face2_ramp2[8].z);
-  glVertex3f(-1*face2_ramp2[9].x, face2_ramp2[9].y, face2_ramp2[9].z);
-  glVertex3f(-1*face2_ramp2[10].x, face2_ramp2[10].y, face2_ramp2[10].z);
-  glVertex3f(-1*face2_ramp2[11].x, face2_ramp2[11].y, face2_ramp2[11].z);
-  glEnd();
-
-  // Face 4 Ramp 3
-  glBegin(GL_POLYGON);
-  glVertex3f(-1*face2_ramp3[0].x, face2_ramp3[0].y, face2_ramp3[0].z);
-  glVertex3f(-1*face2_ramp3[1].x, face2_ramp3[1].y, face2_ramp3[1].z);
-  glVertex3f(-1*face2_ramp3[2].x, face2_ramp3[2].y, face2_ramp3[2].z);
-  glVertex3f(-1*face2_ramp3[3].x, face2_ramp3[3].y, face2_ramp3[3].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(-1*face2_ramp3[4].x, face2_ramp3[4].y, face2_ramp3[4].z);
-  glVertex3f(-1*face2_ramp3[5].x, face2_ramp3[5].y, face2_ramp3[5].z);
-  glVertex3f(-1*face2_ramp3[6].x, face2_ramp3[6].y, face2_ramp3[6].z);
-  glVertex3f(-1*face2_ramp3[7].x, face2_ramp3[7].y, face2_ramp3[7].z);
-  glEnd();
-
-  glBegin(GL_POLYGON);
-  glVertex3f(-1*face2_ramp3[8].x, face2_ramp3[8].y, face2_ramp3[8].z);
-  glVertex3f(-1*face2_ramp3[9].x, face2_ramp3[9].y, face2_ramp3[9].z);
-  glVertex3f(-1*face2_ramp3[10].x, face2_ramp3[10].y, face2_ramp3[10].z);
-  glVertex3f(-1*face2_ramp3[11].x, face2_ramp3[11].y, face2_ramp3[11].z);
+  glVertex3f(a*ramp[8].x, b*ramp[8].y, c*ramp[8].z);
+  glVertex3f(a*ramp[9].x, b*ramp[9].y, c*ramp[9].z);
+  glVertex3f(a*ramp[10].x, b*ramp[10].y, c*ramp[10].z);
+  glVertex3f(a*ramp[11].x, b*ramp[11].y, c*ramp[11].z);
   glEnd();
 
   glFlush();
   glutSwapBuffers();
+}
+
+void draw_ramps() {
+  make_ramp(face1_ramp1, 1, 1, 1);
+  make_ramp(face1_ramp2, 1, 1, 1);
+  make_ramp(face1_ramp3, 1, 1, 1);
+
+  make_ramp(face2_ramp1, 1, 1, 1);
+  make_ramp(face2_ramp2, 1, 1, 1);
+  make_ramp(face2_ramp3, 1, 1, 1);
+
+  make_ramp(face1_ramp1, 1, 1, -1);
+  make_ramp(face1_ramp2, 1, 1, -1);
+  make_ramp(face1_ramp3, 1, 1, -1);
+
+  make_ramp(face2_ramp1, -1, 1, 1);
+  make_ramp(face2_ramp2, -1, 1, 1);
+  make_ramp(face2_ramp3, -1, 1, 1);
 }

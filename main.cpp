@@ -157,9 +157,10 @@ static int window;
 static int value;
 static int key_input;
 static int theta;
-
+int count=0;
 /***** FUNCTION DECLARATION *****/
-
+void mouse(int,int,int,int);
+void incpot(int);
 void menu(int);
 void createMenu(void);
 void display(void);
@@ -191,8 +192,9 @@ int main(int argc, char **argv) {
   glutInitWindowSize(500, 500);
   glutInitWindowPosition(0, 0);
   glutCreateWindow("Nature Amongst Humans");
-  createMenu();
-  glutDisplayFunc(display);
+//  createMenu();
+  glutMouseFunc(mouse);
+	glutDisplayFunc(display);
   glutReshapeFunc(reshape);
   glutKeyboardFunc(keyboard);
   glEnable(GL_DEPTH_TEST);
@@ -201,6 +203,24 @@ int main(int argc, char **argv) {
 
 /***** FUNCTION DEFINITION *****/
 
+//MOUSE function for left and right button's
+void mouse(int btn,int state,int x,int y)
+{
+	if(btn==GLUT_LEFT_BUTTON && state==GLUT_DOWN) 
+		{
+		count++;
+		incpot(count);
+//	glutPostRedisplay();
+		}
+	if(btn==GLUT_RIGHT_BUTTON && state==GLUT_DOWN) 
+		{
+		createMenu();
+//	glutPostRedisplay();
+		
+		}
+
+}
+
 // Function to create the menu option.
 void createMenu(void) {
   menu_id = glutCreateMenu(menu);
@@ -208,6 +228,117 @@ void createMenu(void) {
   glutAddMenuEntry("Building", 2);
   glutAddMenuEntry("Quit", 0);
   glutAttachMenu(GLUT_RIGHT_BUTTON);
+		glutPostRedisplay();
+}
+void incpot(int count)
+{
+	switch(count){
+	case 1:
+//new pots from here.
+//2nd
+  glPushMatrix();
+  glTranslatef(-60.0, 220.0, 0.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_pot();
+  glPopMatrix();
+
+  glPushMatrix();
+  glTranslatef(-59.0, 200.0, 0.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_circle(0.0, 50.0, 20.0);
+  glPopMatrix();
+	glutSwapBuffers();
+	break;
+//3rd
+  case 2: glPushMatrix();
+  glTranslatef(-120.0, 235.0, 0.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_pot();
+  glPopMatrix();
+
+  glPushMatrix();
+  glTranslatef(-120.0, 220.0, 0.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_circle(0.0, 50.0, 20.0);
+  glPopMatrix();
+	glutSwapBuffers();
+	break;
+//4th
+	case 3: glPushMatrix();
+  glTranslatef(-190.0, 245.0, 0.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_pot();
+  glPopMatrix();
+
+  glPushMatrix();
+  glTranslatef(-190.0, 230.0, 0.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_circle(0.0, 50.0, 20.0);
+  glPopMatrix();
+	glutSwapBuffers();
+	break;
+
+//5th goes to the right
+
+	case 4:glPushMatrix();
+  glTranslatef(170.0, 180.0, 100.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_pot();
+  glPopMatrix();
+
+  glPushMatrix();
+  glTranslatef(170.0, 165.0, 100.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_circle(0.0, 50.0, 20.0);
+  glPopMatrix();
+	glutSwapBuffers();
+	break;
+//6th
+
+	case 5:	glPushMatrix();
+  glTranslatef(90.0, 210.0, 250.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_pot();
+  glPopMatrix();
+
+  glPushMatrix();
+  glTranslatef(90.0, 190.0, 200.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_circle(0.0, 50.0, 20.0);
+  glPopMatrix();
+	glutSwapBuffers();
+	break;
+//7th
+	case 6:	glPushMatrix();
+  glTranslatef(120.0, 100.0, 350.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_pot();
+  glPopMatrix();
+
+  glPushMatrix();
+  glTranslatef(120.0, 85.0, 300.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_circle(0.0, 50.0, 20.0);
+  glPopMatrix();
+	glutSwapBuffers();
+	break;
+//8th
+	case 7:	glPushMatrix();
+  glTranslatef(30.0, 130.0, 350.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_pot();
+  glPopMatrix();
+
+  glPushMatrix();
+  glTranslatef(30.0, 115.0, 350.0);
+  glScalef(1.5, 1.5, 1.5);
+  draw_circle(0.0, 50.0, 20.0);
+  glPopMatrix();
+	glutSwapBuffers();	
+	break;
+//ends pot here.
+	}
+
 }
 
 // Function that assigns the appropriate value for the option chosen by the user.
@@ -354,15 +485,15 @@ void draw_cube(GLfloat colors[][3]) {
 
 // Function to draw house
 void draw_house(void) {
+
   glPushMatrix();
   glClearColor(115/255.0, 230/255.0, 0.0, 1.0);
   glRotatef(20.0, 1.0, 0.0, 0.0);
   glRotatef(-20.0, 0.0, 1.0, 0.0);
   glScalef(1.5, 1.0, 1.3);
   draw_cube(house_color);
-
-  //glRotatef(20.0, 1.0, 0.0, 0.0);
-  //glRotatef(-20.0, 0.0, 1.0, 0.0);
+// glRotatef(20.0, 1.0, 0.0, 0.0);
+// glRotatef(-20.0, 0.0, 1.0, 0.0);
   draw_door();
   glPopMatrix();
 
@@ -377,6 +508,8 @@ void draw_house(void) {
   glScalef(1.5, 1.5, 1.5);
   draw_circle(0.0, 50.0, 20.0);
   glPopMatrix();
+
+
 }
 
 
@@ -389,7 +522,6 @@ void draw_door(void) {
   glVertex3f(door[3].x, door[3].y, door[3].z);
   glVertex3f(door[2].x, door[2].y, door[2].z);
   glEnd();
-
   glFlush();
   glutSwapBuffers();
 }

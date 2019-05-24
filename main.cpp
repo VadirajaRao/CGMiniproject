@@ -103,9 +103,9 @@ point face2_ramp1[] = {
   point(200.0, -90.0, 200.0),
   // Side 2
   point(200.0, -100.0, -150.0),
-  point(240.0, -100.0, -150.0),
+  point(200.0, -90.0, -150.0),
   point(240.0, -90.0, -150.0),
-  point(200.0, -90.0, -150.0)};
+  point(240.0, -100.0, -150.0)};
 
 point face2_ramp2[] = {
   // Front
@@ -120,9 +120,9 @@ point face2_ramp2[] = {
   point(200.0, 10.0, 150.0),
   // Side 2
   point(200.0, 0.0, -200.0),
-  point(240.0, 0.0, -200.0),
+  point(200.0, 10.0, -200.0),
   point(240.0, 10.0, -200.0),
-  point(200.0, 10.0, -200.0)};
+  point(240.0, 0.0, -200.0)};
 
 point face2_ramp3[] = {
   // Front
@@ -137,9 +137,9 @@ point face2_ramp3[] = {
   point(200.0, 110.0, 200.0),
   // Side 2
   point(200.0, 100.0, -150.0),
-  point(240.0, 100.0, -150.0),
+  point(200.0, 110.0, -150.0),
   point(240.0, 110.0, -150.0),
-  point(200.0, 110.0, -150.0)};
+  point(240.0, 100.0, -150.0)};
 
 // Color of the house in RGB format
 GLfloat house_color[3][3] = {{1.0, 0.6, 0.2},
@@ -367,9 +367,6 @@ void display(void) {
   case 2: key_input = 1;
     draw_building();
     break;
-
-  case 3: draw_triangle();
-    break;
   }
 }
 
@@ -563,38 +560,36 @@ void draw_building(void) {
   draw_cube(building_color);
   draw_ramps();
 
-  /*
-  glRotatef(theta, 0.0, 1.0, 0.0);
-  glTranslatef(0.0, 10.0, 0.0);
-  glScalef(1.0, 2.0, 1.0);
   draw_grass();
-  */
+
   glPopMatrix();
 }
 
 
-void make_ramp(point ramp[], int a, int b, int c) {
-  glColor3f(0.0, 0.0, 0.0);
+void make_ramp(point ramp[], float a, float b, float c, float p=0, float q=0, float r=0, int flag = 0) {
+  float val = 0;
+  if(flag == 1)
+    val = 10.0;
 
   glBegin(GL_POLYGON);
-  glVertex3f(a*ramp[0].x, b*ramp[0].y, c*ramp[0].z);
-  glVertex3f(a*ramp[1].x, b*ramp[1].y, c*ramp[1].z);
-  glVertex3f(a*ramp[2].x, b*ramp[2].y, c*ramp[2].z);
-  glVertex3f(a*ramp[3].x, b*ramp[3].y, c*ramp[3].z);
+  glVertex3f(a*ramp[0].x+p, b*ramp[0].y+q, c*ramp[0].z+r);
+  glVertex3f(a*ramp[1].x+p, b*ramp[1].y+q, c*ramp[1].z+r);
+  glVertex3f(a*ramp[2].x+p, b*ramp[2].y+q+val, c*ramp[2].z+r);
+  glVertex3f(a*ramp[3].x+p, b*ramp[3].y+q+val, c*ramp[3].z+r);
   glEnd();
 
   glBegin(GL_POLYGON);
-  glVertex3f(a*ramp[4].x, b*ramp[4].y, c*ramp[4].z);
-  glVertex3f(a*ramp[5].x, b*ramp[5].y, c*ramp[5].z);
-  glVertex3f(a*ramp[6].x, b*ramp[6].y, c*ramp[6].z);
-  glVertex3f(a*ramp[7].x, b*ramp[7].y, c*ramp[7].z);
+  glVertex3f(a*ramp[4].x+p, b*ramp[4].y+q, c*ramp[4].z+r);
+  glVertex3f(a*ramp[5].x+p, b*ramp[5].y+q, c*ramp[5].z+r);
+  glVertex3f(a*ramp[6].x+p, b*ramp[6].y+q+val, c*ramp[6].z+r);
+  glVertex3f(a*ramp[7].x+p, b*ramp[7].y+q+val, c*ramp[7].z+r);
   glEnd();
 
   glBegin(GL_POLYGON);
-  glVertex3f(a*ramp[8].x, b*ramp[8].y, c*ramp[8].z);
-  glVertex3f(a*ramp[9].x, b*ramp[9].y, c*ramp[9].z);
-  glVertex3f(a*ramp[10].x, b*ramp[10].y, c*ramp[10].z);
-  glVertex3f(a*ramp[11].x, b*ramp[11].y, c*ramp[11].z);
+  glVertex3f(a*ramp[8].x+p, b*ramp[8].y+q, c*ramp[8].z+r);
+  glVertex3f(a*ramp[9].x+p, b*ramp[9].y+q+val, c*ramp[9].z+r);
+  glVertex3f(a*ramp[10].x+p, b*ramp[10].y+q+val, c*ramp[10].z+r);
+  glVertex3f(a*ramp[11].x+p, b*ramp[11].y+q, c*ramp[11].z+r);
   glEnd();
 
   glFlush();
@@ -602,6 +597,8 @@ void make_ramp(point ramp[], int a, int b, int c) {
 }
 
 void draw_ramps() {
+  glColor3f(0.0, 0.0, 0.0);
+
   make_ramp(face1_ramp1, 1, 1, 1);
   make_ramp(face1_ramp2, 1, 1, 1);
   make_ramp(face1_ramp3, 1, 1, 1);
@@ -617,4 +614,24 @@ void draw_ramps() {
   make_ramp(face2_ramp1, -1, 1, 1);
   make_ramp(face2_ramp2, -1, 1, 1);
   make_ramp(face2_ramp3, -1, 1, 1);
+}
+
+void draw_grass() {
+  glColor3f(51/255.0, 102/255.0, 0.0);
+
+  make_ramp(face1_ramp1, 1, 1, 1, 0.0, 10.0, 0.0, 1);
+  make_ramp(face1_ramp2, 1, 1, 1, 0.0, 10.0, 0.0, 1);
+  make_ramp(face1_ramp3, 1, 1, 1, 0.0, 10.0, 0.0, 1);
+
+  make_ramp(face2_ramp1, 1, 1, 1, 0.0, 10.0, 0.0, 1);
+  make_ramp(face2_ramp2, 1, 1, 1, 0.0, 10.0, 0.0, 1);
+  make_ramp(face2_ramp3, 1, 1, 1, 0.0, 10.0, 0.0, 1);
+
+  make_ramp(face1_ramp1, 1, 1, -1, 0.0, 10.0, 0.0, 1);
+  make_ramp(face1_ramp2, 1, 1, -1, 0.0, 10.0, 0.0, 1);
+  make_ramp(face1_ramp3, 1, 1, -1, 0.0, 10.0, 0.0, 1);
+
+  make_ramp(face2_ramp1, -1, 1, 1, 0.0, 10.0, 0.0, 1);
+  make_ramp(face2_ramp2, -1, 1, 1, 0.0, 10.0, 0.0, 1);
+  make_ramp(face2_ramp3, -1, 1, 1, 0.0, 10.0, 0.0, 1);
 }

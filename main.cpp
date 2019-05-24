@@ -38,6 +38,10 @@ point pot[4] = { point(-10.0, 0.0, 0.0),
 		 point(20.0, 30.0, 0.0),
 		 point(-20.0, 30.0, 0.0)};
 
+// Translate coordinates
+point T(-150.0, 270.0, -150.0);
+point C(0.0, 0.0, 0.0);
+
 // Vertices for the ramps
 point face1_ramp1[] = { 
   // Front
@@ -156,8 +160,11 @@ static int menu_id;
 static int window;
 static int value;
 static int key_input;
+static int mouse_input;
 static int theta;
-int count=0;
+static int count=0;
+static int flag = 0;
+
 /***** FUNCTION DECLARATION *****/
 void mouse(int,int,int,int);
 void incpot(int);
@@ -192,9 +199,8 @@ int main(int argc, char **argv) {
   glutInitWindowSize(500, 500);
   glutInitWindowPosition(0, 0);
   glutCreateWindow("Nature Amongst Humans");
-//  createMenu();
   glutMouseFunc(mouse);
-	glutDisplayFunc(display);
+  glutDisplayFunc(display);
   glutReshapeFunc(reshape);
   glutKeyboardFunc(keyboard);
   glEnable(GL_DEPTH_TEST);
@@ -206,19 +212,13 @@ int main(int argc, char **argv) {
 //MOUSE function for left and right button's
 void mouse(int btn,int state,int x,int y)
 {
-	if(btn==GLUT_LEFT_BUTTON && state==GLUT_DOWN) 
-		{
-		count++;
-		incpot(count);
-//	glutPostRedisplay();
-		}
-	if(btn==GLUT_RIGHT_BUTTON && state==GLUT_DOWN) 
-		{
-		createMenu();
-//	glutPostRedisplay();
-		
-		}
+  if(btn==GLUT_LEFT_BUTTON && state==GLUT_DOWN && mouse_input == 1) {
+    count++;
+    incpot(count);
+  }
 
+  if(btn==GLUT_RIGHT_BUTTON && state==GLUT_DOWN)
+    createMenu();
 }
 
 // Function to create the menu option.
@@ -228,120 +228,66 @@ void createMenu(void) {
   glutAddMenuEntry("Building", 2);
   glutAddMenuEntry("Quit", 0);
   glutAttachMenu(GLUT_RIGHT_BUTTON);
-		glutPostRedisplay();
-}
-void incpot(int count)
-{
-	switch(count){
-	case 1:
-//new pots from here.
-//2nd
-  glPushMatrix();
-  glTranslatef(-60.0, 220.0, 0.0);
-  glScalef(1.5, 1.5, 1.5);
-  draw_pot();
-  glPopMatrix();
-
-  glPushMatrix();
-  glTranslatef(-59.0, 200.0, 0.0);
-  glScalef(1.5, 1.5, 1.5);
-  draw_circle(0.0, 50.0, 20.0);
-  glPopMatrix();
-	glutSwapBuffers();
-	break;
-//3rd
-  case 2: glPushMatrix();
-  glTranslatef(-120.0, 235.0, 0.0);
-  glScalef(1.5, 1.5, 1.5);
-  draw_pot();
-  glPopMatrix();
-
-  glPushMatrix();
-  glTranslatef(-120.0, 220.0, 0.0);
-  glScalef(1.5, 1.5, 1.5);
-  draw_circle(0.0, 50.0, 20.0);
-  glPopMatrix();
-	glutSwapBuffers();
-	break;
-//4th
-	case 3: glPushMatrix();
-  glTranslatef(-190.0, 245.0, 0.0);
-  glScalef(1.5, 1.5, 1.5);
-  draw_pot();
-  glPopMatrix();
-
-  glPushMatrix();
-  glTranslatef(-190.0, 230.0, 0.0);
-  glScalef(1.5, 1.5, 1.5);
-  draw_circle(0.0, 50.0, 20.0);
-  glPopMatrix();
-	glutSwapBuffers();
-	break;
-
-//5th goes to the right
-
-	case 4:glPushMatrix();
-  glTranslatef(170.0, 180.0, 100.0);
-  glScalef(1.5, 1.5, 1.5);
-  draw_pot();
-  glPopMatrix();
-
-  glPushMatrix();
-  glTranslatef(170.0, 165.0, 100.0);
-  glScalef(1.5, 1.5, 1.5);
-  draw_circle(0.0, 50.0, 20.0);
-  glPopMatrix();
-	glutSwapBuffers();
-	break;
-//6th
-
-	case 5:	glPushMatrix();
-  glTranslatef(90.0, 210.0, 250.0);
-  glScalef(1.5, 1.5, 1.5);
-  draw_pot();
-  glPopMatrix();
-
-  glPushMatrix();
-  glTranslatef(90.0, 190.0, 200.0);
-  glScalef(1.5, 1.5, 1.5);
-  draw_circle(0.0, 50.0, 20.0);
-  glPopMatrix();
-	glutSwapBuffers();
-	break;
-//7th
-	case 6:	glPushMatrix();
-  glTranslatef(120.0, 100.0, 350.0);
-  glScalef(1.5, 1.5, 1.5);
-  draw_pot();
-  glPopMatrix();
-
-  glPushMatrix();
-  glTranslatef(120.0, 85.0, 300.0);
-  glScalef(1.5, 1.5, 1.5);
-  draw_circle(0.0, 50.0, 20.0);
-  glPopMatrix();
-	glutSwapBuffers();
-	break;
-//8th
-	case 7:	glPushMatrix();
-  glTranslatef(30.0, 130.0, 350.0);
-  glScalef(1.5, 1.5, 1.5);
-  draw_pot();
-  glPopMatrix();
-
-  glPushMatrix();
-  glTranslatef(30.0, 115.0, 350.0);
-  glScalef(1.5, 1.5, 1.5);
-  draw_circle(0.0, 50.0, 20.0);
-  glPopMatrix();
-	glutSwapBuffers();	
-	break;
-//ends pot here.
-	}
-
+  glutPostRedisplay();
 }
 
-// Function that assigns the appropriate value for the option chosen by the user.
+void incpot(int count) {
+  if(count <= 7) {
+    C.x += 60.0;
+    C.y -= 10.0;
+    C.z += 60.0;
+    glPushMatrix();
+    glTranslatef(C.x, C.y, C.z);
+    glScalef(1.5, 1.5, 1.5);
+    draw_pot();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(C.x, C.y-15.0, C.z);
+    glScalef(1.5, 1.5, 1.5);
+    draw_circle(0.0, 50.0, 20.0);
+    glPopMatrix();
+
+    glFlush();
+    glutSwapBuffers();
+    if (count == 7)
+      flag = 1;
+  }
+  else if(count <= 15 && count > 7) {
+    if(flag == 1) {
+      C.x = -150.0;
+      C.z = 150.0;
+      C.y = 200.0;
+      flag = 0;
+      cout << "flag : " << flag << endl;
+    }
+    else {
+      C.x += 60.0;
+      C.y -= 10.0;
+      C.z += 60.0;
+    }
+
+    glPushMatrix();
+    glTranslatef(C.x, C.y, C.z);
+    glScalef(1.5, 1.5, 1.5);
+    draw_pot();
+    glPopMatrix();
+
+    glPushMatrix();
+    glTranslatef(C.x, C.y-15.0, C.z);
+    glScalef(1.5, 1.5, 1.5);
+    draw_circle(0.0, 50.0, 20.0);
+    glPopMatrix();
+
+    glFlush();
+    glutSwapBuffers();
+  }
+  else {
+    cout << "Limit exceeded" << endl;
+  }
+}
+
+// Function that assigns the appropriate value for the option chosen by the user
 // It destroys or closes the window and terminates the program if "Quit" option
 // is chosen.
 void menu(int num) {
@@ -361,10 +307,14 @@ void display(void) {
 
   switch(value) {
   case 1: key_input = 0;
+    mouse_input = 1;
+    C = T;
+    count = 0;
     draw_house();
     break;
 
   case 2: key_input = 1;
+    mouse_input = 0;
     draw_building();
     break;
   }
@@ -489,24 +439,20 @@ void draw_house(void) {
   glRotatef(-20.0, 0.0, 1.0, 0.0);
   glScalef(1.5, 1.0, 1.3);
   draw_cube(house_color);
-// glRotatef(20.0, 1.0, 0.0, 0.0);
-// glRotatef(-20.0, 0.0, 1.0, 0.0);
   draw_door();
   glPopMatrix();
 
   glPushMatrix();
-  glTranslatef(0.0, 215.0, 0.0);
+  glTranslatef(T.x, T.y, T.z);
   glScalef(1.5, 1.5, 1.5);
   draw_pot();
   glPopMatrix();
 
   glPushMatrix();
-  glTranslatef(0.0, 200.0, 0.0);
+  glTranslatef(T.x, T.y-15.0, T.z);
   glScalef(1.5, 1.5, 1.5);
   draw_circle(0.0, 50.0, 20.0);
   glPopMatrix();
-
-
 }
 
 
